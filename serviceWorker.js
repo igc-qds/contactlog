@@ -5,6 +5,7 @@ const assets = [
   "/contactlog/css/style.css",
   "/contactlog/js/app.js",
   "/contactlog/js/download.js",
+  "/contactlog/js/serviceWorker.js",
 ];
 
 self.addEventListener("install", function( installEvent ) {
