@@ -2,7 +2,6 @@ const staticContactLog = "contactlog-site-v1"
 const assets = [
   "/contactlog/",
   "/contactlog/index.html",
-  "/contactlog/favicon.ico",
   "/contactlog/css/style.css",
   "/contactlog/js/app.js",
   "/contactlog/js/download.js",
