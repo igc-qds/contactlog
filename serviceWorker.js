@@ -1,11 +1,11 @@
 const staticContactLog = "contactlog-site-v1"
 const assets = [
-  "/contactlog/",
-  "/contactlog/index.html",
-  "/contactlog/css/style.css",
-  "/contactlog/js/app.js",
-  "/contactlog/js/download.js",
-  "/contactlog/js/serviceWorker.js",
+  "/",
+  "/index.html",
+  "/css/style.css",
+  "/js/app.js",
+  "/js/download.js",
+  "https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap"
 ];
 
 self.addEventListener("install", function( installEvent ) {
@@ -13,15 +13,15 @@ self.addEventListener("install", function( installEvent ) {
 });
 
 self.addEventListener('fetch', function(evt) {
-  // console.log('The service worker is serving the asset.');
+  console.log('The service worker is serving the asset.');
   evt.respondWith(fromCache(evt.request));
   //update the cache
   evt.waitUntil(update(evt.request));
 });
 
 function precache() {
-  return caches.open(staticContactLog).then(function (cache) {
-    return cache.addAll([ assets ]);
+  return caches.open(CACHE).then(function (cache) {
+    return cache.addAll([assets]);
   });
 }
 
@@ -47,4 +47,4 @@ function update(request) {
 //       return res || fetch(fetchEvent.request)
 //     })
 //   )
-// })
+// });
